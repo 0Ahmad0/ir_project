@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div id="results-container">
+        <h2>Search Result For : "{{ query }}"</h2>
+        <div id="documents">
+            {% if documents %}
+                {% for document in documents %}
+                    <div class="document">
+                        <p>{{ document|safe }}</p>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p class="no_data_found">No Result Found</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

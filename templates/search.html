@@ -1,0 +1,73 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Engine</title>
+       <link rel="stylesheet" href="/static/style.css">
+
+</head>
+<body>
+    <div id="search-container">
+        <form id="search-form" action="/search" method="post">
+            <input type="text" name="query" placeholder="ابحث هنا">
+            <input type="submit" value="بحث">
+            <div id="dataset-selection">
+                <input type="radio" name="dataset" value="dataset1" checked>
+                <label for="dataset1">Dataset 1</label>
+                <input type="radio" name="dataset" value="dataset2">
+                <label for="dataset2">Dataset 2</label>
+            </div>
+        </form>
+    </div>
+    <div class="container">
+      
+        <div class="circle">
+            <img src="/static/1.jpg" alt="Amer Thlaj" class="image">
+            <div class="overlay">
+            <div class="name">Amer Thlaj</div>
+
+            </div>
+       </div>
+       <!-- #################3 -->
+        <div class="circle">
+            <img src="/static/2.jpg" alt="Mohand Almasri" class="image">
+            <div class="overlay">
+                <div class="name">Mohand Almasri</div>
+            </div>
+       </div>
+       <!-- #################3 -->
+
+        <div class="circle">
+            <img src="/static/3.jpg" alt="Ahmad Alhariri" class="image">
+            <div class="overlay">
+            <div class="name">Ahmad Alhariri</div>
+            </div>
+      </div>
+       <!-- #################3 -->
+
+        <div class="circle">
+            <img src="/static/4.jpg" alt="Haitham Hiba" class="image">
+            <div class="overlay">
+
+            <div class="name">Haitham Hiba</div>
+
+            </div>
+    </div>
+    </div>
+    <svg class="wave" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 240" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(255, 230.234, 0, 1)" offset="0%"></stop><stop stop-color="rgba(255, 255, 255, 1)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,0L120,16C240,32,480,64,720,76C960,88,1200,80,1440,72C1680,64,1920,56,2160,72C2400,88,2640,128,2880,140C3120,152,3360,136,3600,132C3840,128,4080,136,4320,124C4560,112,4800,80,5040,76C5280,72,5520,96,5760,120C6000,144,6240,168,6480,164C6720,160,6960,128,7200,104C7440,80,7680,64,7920,52C8160,40,8400,32,8640,36C8880,40,9120,56,9360,56C9600,56,9840,40,10080,48C10320,56,10560,88,10800,120C11040,152,11280,184,11520,164C11760,144,12000,72,12240,68C12480,64,12720,128,12960,144C13200,160,13440,128,13680,116C13920,104,14160,112,14400,100C14640,88,14880,56,15120,60C15360,64,15600,104,15840,116C16080,128,16320,112,16560,96C16800,80,17040,64,17160,56L17280,48L17280,240L17160,240C17040,240,16800,240,16560,240C16320,240,16080,240,15840,240C15600,240,15360,240,15120,240C14880,240,14640,240,14400,240C14160,240,13920,240,13680,240C13440,240,13200,240,12960,240C12720,240,12480,240,12240,240C12000,240,11760,240,11520,240C11280,240,11040,240,10800,240C10560,240,10320,240,10080,240C9840,240,9600,240,9360,240C9120,240,8880,240,8640,240C8400,240,8160,240,7920,240C7680,240,7440,240,7200,240C6960,240,6720,240,6480,240C6240,240,6000,240,5760,240C5520,240,5280,240,5040,240C4800,240,4560,240,4320,240C4080,240,3840,240,3600,240C3360,240,3120,240,2880,240C2640,240,2400,240,2160,240C1920,240,1680,240,1440,240C1200,240,960,240,720,240C480,240,240,240,120,240L0,240Z"></path></svg>
+
+    <script>
+        // تحديث القيمة الافتراضية للبحث عن المجموعة المحددة
+        document.querySelector('#search-form').addEventListener('submit', function(event) {
+            var selectedDataset = document.querySelector('input[name="dataset"]:checked').value;
+            var searchForm = document.querySelector('#search-form');
+            var hiddenInput = document.createElement('input');
+            hiddenInput.type = 'hidden';
+            hiddenInput.name = 'selected_dataset';
+            hiddenInput.value = selectedDataset;
+            searchForm.appendChild(hiddenInput);
+        });
+    </script>
+</body>
+</html>
